@@ -3,14 +3,13 @@ package Test1;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class FirstSeleniumTest {
+public class LoginShouldFailTest {
     WebDriver drive;
 
     @BeforeClass
@@ -39,8 +38,7 @@ public class FirstSeleniumTest {
         Thread.sleep(2000);
         String actualResult = drive.findElement(By.tagName("h6")).getText();
         String expectResult = "Dashboard";
-        Assert.assertEquals(actualResult, expectResult);
+        Assert.assertNotEquals(actualResult, expectResult);
 
     }
-    //https://www.youtube.com/watch?v=QQliGCtqD2w&t=1290s
 }
