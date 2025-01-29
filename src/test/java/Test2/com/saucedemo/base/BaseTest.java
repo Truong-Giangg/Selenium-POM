@@ -1,10 +1,8 @@
 package Test2.com.saucedemo.base;
 
-import com.saucedemo.pages.BasePage;
+import com.base.BasePage;
 import com.saucedemo.pages.LoginPage;
-import org.junit.After;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.bidi.log.Log;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
