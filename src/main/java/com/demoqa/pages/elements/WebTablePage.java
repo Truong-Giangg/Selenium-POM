@@ -3,7 +3,7 @@ package com.demoqa.pages.elements;
 import com.demoqa.pages.HomePage;
 import org.openqa.selenium.By;
 
-public class WebTablePage extends HomePage {
+public class WebTablePage extends ElementsPage {
 
     private By registrationAgeField = By.id("age");
     private By submitButton = By.id("submit");
