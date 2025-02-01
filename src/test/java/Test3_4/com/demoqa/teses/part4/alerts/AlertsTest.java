@@ -4,12 +4,12 @@ import Test3_4.com.demoqa.base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import static utilities.SwitchToUtility.acceptAlert;
-import static utilities.SwitchToUtility.getAlertText;
+import static utilities.SwitchToUtility.*;
 
+@Test
 public class AlertsTest extends BaseTest {
 
-    @Test
+
     public void testInformationAlert() {
         String alertText = "You clicked a button";
         var alertPage = homePage.goToAlertsFramesWindowsCard().clickAlerts();
@@ -17,5 +17,15 @@ public class AlertsTest extends BaseTest {
         Assert.assertEquals(getAlertText(), alertText,
                 "\n Actual & Expected Message Do Not Match\n");
         acceptAlert();
+    }
+
+    public void testConfirmationAlert() {
+        String expectedConfirmationResult = "You selected Cancel";
+        var alertsPage = homePage.goToAlertsFramesWindowsCard().clickAlerts();
+        alertsPage.clickConfirmationAlertButton();
+        dismissAlert();
+        String actualConfirmationResult = alertsPage.getConfirmationResult();
+        Assert.assertEquals(actualConfirmationResult, expectedConfirmationResult,
+                "\n You did not select Cancel\n");
     }
 }
