@@ -32,4 +32,8 @@ public class SwitchToUtility extends Utility{
     public static void switchToDefaultContent() {
         switchTo().defaultContent();
     }
+
+    public static void switchToFrameIndex(int index) {
+        switchTo().frame(index);
+    }
 }
