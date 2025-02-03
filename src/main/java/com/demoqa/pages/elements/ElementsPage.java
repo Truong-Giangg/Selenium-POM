@@ -10,7 +10,13 @@ public class ElementsPage extends HomePage {
     private By webTableMenuItem = By.xpath("//li[@id='item-3']//span[text()='Web Tables']");
     private By linkMenuItem = By.xpath("//li[@id='item-5']/span[text()='Links']");
     private By dynamicPropertiesMenuItem = By.xpath("//li[@id='item-8']/span[text()='Dynamic Properties']");
+    private By textBoxMenuIteam = By.xpath("//li[@id='item-0']/span[text()='Text Box']");
 
+    public TextBoxPage clickTextBoxPage() {
+        scrollToElementJS(textBoxMenuIteam);
+        click(textBoxMenuIteam);
+        return new TextBoxPage();
+    }
     public DynamicPropertiesPage clickDynamicPropertiesPage() {
         scrollToElementJS(dynamicPropertiesMenuItem);
         click(dynamicPropertiesMenuItem);
