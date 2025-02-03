@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 
 import static utilities.JavaScriptUtility.scrollToElementJS;
 import static utilities.SwitchToUtility.*;
+import static utilities.WaitUtility.explicitWaitUntilVisible;
 
 public class FramesPage extends Alerts_Frame_WindowsPage{
 
@@ -38,6 +39,7 @@ public class FramesPage extends Alerts_Frame_WindowsPage{
 
     public String getTextInSmallFrame() {
         switchToSmallBox();
+        explicitWaitUntilVisible(5, textInFrame);
         String smallFrameText = find(textInFrame).getText();
         System.out.println("Small Frame Text" + smallFrameText);
         switchToDefaultContent();
@@ -46,6 +48,7 @@ public class FramesPage extends Alerts_Frame_WindowsPage{
 
     public String getTextInSmallFrameElement() {
         switchToSmallBoxByElement();
+        explicitWaitUntilVisible(5, textInFrame);
         String smallFrameText = find(textInFrame).getText();
         System.out.println("Small Frame Text" + smallFrameText);
         switchToDefaultContent();

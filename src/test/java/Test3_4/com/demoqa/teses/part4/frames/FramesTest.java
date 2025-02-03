@@ -21,7 +21,7 @@ public class FramesTest extends BaseTest {
     }
 
     @Test
-    public void testFramSmallBox() {
+    public void testFrameSmallBox() {
         var framesPage = homePage.goToAlertsFramesWindowsCard().clickFrames();
         String actualSmallBoxText = framesPage.getTextInSmallFrame();
         String expectedSmallBoxText= "This is a sample page";
